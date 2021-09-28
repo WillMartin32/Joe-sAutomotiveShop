@@ -1,5 +1,6 @@
 import CustomerClass as cust
 import CarClass as car
+import ServiceQuoteClass as ser
 
 def main():
 
@@ -17,6 +18,11 @@ def main():
 
     customer1_car1 = car.Car(car_make,car_model,car_year)
 
+    part_service = input("What is the cost of the parts? ")
+    labor_service = input("What is the cost of labor? ")
+
+    customer1_service1 = ser.ServiceQuote(part_service,labor_service)
+
     print("Customer:")
     print("-Name:          ", customer1.get_name())
     print("-Address:       ", customer1.get_address())
@@ -27,6 +33,10 @@ def main():
     print("-Make:          ", customer1_car1.get_make())
     print("-Model:         ", customer1_car1.get_model())
     print("-Year:          ", customer1_car1.get_year())
+    print()
+
+    t = customer1_service1.get_sales_tax
+    print(customer1_service1.get_total_charges())
 
 
 main()
