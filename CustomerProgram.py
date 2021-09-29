@@ -20,11 +20,19 @@ def main():
 
     part_service = input("What is the cost of the parts? ")
     labor_service = input("What is the cost of labor? ")
+    tax_rate = input("What is the tax rate? (Ex. .20) ")
+    tax = 0
+    print()
 
-    customer1_service1 = ser.ServiceQuote(part_service,labor_service)
+    customer1_service1 = ser.ServiceQuote(part_service,labor_service,tax_rate,tax)
+
+    tax = str(customer1_service1.get_sales_tax)
+
+    customer1_service1 = ser.ServiceQuote(part_service,labor_service,tax_rate,tax)
+
 
     print("Customer:")
-    print("-Name:          ", customer1.get_name())
+    customer1.get_name()
     print("-Address:       ", customer1.get_address())
     print("-Phone Number:  ", customer1.get_phone())
     print()
@@ -33,6 +41,13 @@ def main():
     print("-Make:          ", customer1_car1.get_make())
     print("-Model:         ", customer1_car1.get_model())
     print("-Year:          ", customer1_car1.get_year())
+    print()
+
+    print("Cost:")
+    print("Part(s) Cost:   ", customer1_service1.get_parts_charges())
+    print("Labor Cost:     ", customer1_service1.get_labor_charges())
+    print("Sales Tax:      ", customer1_service1.get_sales_tax())
+    print("Total Cost:     ", customer1_service1.get_total_charges())
     print()
 
     t = customer1_service1.get_sales_tax
