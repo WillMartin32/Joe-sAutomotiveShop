@@ -16,7 +16,6 @@ class Customer:
     
     def get_name(self):
         return self.__name
-        print("-Name:          ", customer1.get_name())
 
     def get_address(self):
         return self.__address

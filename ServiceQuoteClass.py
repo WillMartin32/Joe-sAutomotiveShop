@@ -1,10 +1,10 @@
 class ServiceQuote:
 
-    def __init__(self,pcharge,lcharge,tr,tax):
+    def __init__(self,pcharge,lcharge):
         self.__parts_charges = pcharge
         self.__labor_charges = lcharge
-        self.__tax_rate = tr
-        self.__tax = tax
+ #       self.__tax_rate = tr
+ #       self.__tax = tax
 
     def set_parts_charges(self,pcharge):
         self.__parts_charges = pcharge
@@ -19,9 +19,9 @@ class ServiceQuote:
         return self.__labor_charges
 
     def get_sales_tax(self):
-        tax = self.__tax_rate(self.__parts_charges + self.__labor_charges)
+        tax = (int(self.__parts_charges) + int(self.__labor_charges))
         return tax
 
-    def get_total_charges(self):
-        total_charges = self.__parts_charges + self.__labor_charges + self.__tax
+    def get_total_charges(self,tax):
+        total_charges = int(self.__parts_charges) + int(self.__labor_charges) + int(tax)
         return total_charges
